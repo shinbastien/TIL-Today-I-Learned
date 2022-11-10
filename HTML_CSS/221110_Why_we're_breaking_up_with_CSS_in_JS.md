@@ -1,0 +1,67 @@
+### 221110
+- CSS in JS를 멀리하는 이유
+
+[(번역) 우리가 CSS-in-JS와 헤어지는 이유](https://junghan92.medium.com/%EB%B2%88%EC%97%AD-%EC%9A%B0%EB%A6%AC%EA%B0%80-css-in-js%EC%99%80-%ED%97%A4%EC%96%B4%EC%A7%80%EB%8A%94-%EC%9D%B4%EC%9C%A0-a2e726d6ace6)
+
+- CSS in JS 란?
+    - JS 안에서 직접 CSS 를 선언하여 const 화 할 수 있음
+    - 대표적으로 styled-components // emotion JS 등이 있음
+    - 런타임 CSS in JS  // 컴파일 CSS in JS 등이 있음
+        - 런타임은 ⇒ 앱이 실행될 때 라이브러리가 스타일을 해석하고 적용
+- CSS in JS 의 장점
+    - locally scoped stylesgit 
+        - 일반적인 className을 설정했을 때, 다른 컴포넌트에 해당 스타일이 적용되는 문제 발생 가능
+        - CSS in JS에서는 div 내에 css 스타일을 적용하기 때문에 문제 상황 해결 가능
+        - cf) CSS 모듈도 locally-scoped-styles 을 제공한다.
+    - Colocation
+        - 일반 CSS 에서는 여러 .css 스타일들이 src/styles 디렉토리에 혼재되어 있을 수 있다.
+        - 단일 컴포넌트에 관련된 모든 것은 같은 위치에 두는 것이 더 깔끔한 코드 구성
+            - 컴포넌트 단위 코딩에 더 알맞은 방식으로 보임
+    - use JavaScript variables in styles
+        - props 나 state 로 받은 변수를 스타일에 적용하여 사용자 정의 스타일을 만들 수 있다.
+- 중립
+    - 현재 JS 커뮤니티에서 가장 핫한 trend
+    - 필자의 의견
+        - 새로운 tool, library는 생산성을 향상시켜왔기에 (jQuery ⇒ React) 우리는 신기술에 대한 믿음을 가지고 있다.
+        - 한편 이런 기조는 새 기술에 대한 집착일 수도 있다. 장점에 단점을 간과하며 새 기술을 도입하는 것일수도 있다. ⇒ 이게 CSS in JS의 광범위한 채택에 큰 요인이 되었다고 판단
+- 단점
+    - CSS in JS adds runtime Overhead
+        - 라이브러리가 스타일을 일반 CSS 로 변환하는 과정이 필요 ⇒ CPU 에 부담을 주지만, 앱의 성능에 영향을 주는지는 확인을 더 해봐야 한다.
+    - CSS in JS increases your Bundle Size
+        - 사용자는 해당 라이브러리용 JS를 다운로드 해야 한다. ⇒ 막상 엄청 크지는 않다.
+            - react + react-dom 44.5KB, emotion 은 7.9KB, styled-componentes는 12.7kB
+    - CSS in JS clutters the React DevTools
+        - css 속성을 사용하는 각 요소에 대해 EmotionCSSPropInternal, Insertion 컴포넌트를 렌더하여 개발자 도구를 어지럽게 한다.
+- 지저분한 점
+    - Frquently Inserting CSS rules forces Browser to do a lot of extra work
+        - 컴포넌트에 새 규칙이 삽입되면, 리액트가 생성되고 브라우저는 해당 규칙이 기존 트리에 적용되어 있는지 확인하고 스타일 규칙을 다시 계산. 이 과정이 매 컴포넌트마다 반복
+            - useInsertionEffect 없는 React Concurrent mode 에서의 성능
+    - SSR 및 컴포넌트 라이브러리에서 에러가 발생할 상황이 많다. ⇒ 잘못될 가능성이 많다.
+        - emotion 이 여러 번 로드된다. 같은 버전이어도 문제 발생 가능
+        - 컴포넌트 라이브러리는 스타일이 삽입되는 순서를 완전히 제어할 수 없다.
+        - Emotion의 SSR 지원은 React 17과 18에서 다르게 적용 ⇒ 18의 Streaming SSR과 호환 위해 변화 필요
+- 성능 심층 분석
+    - 컴포넌트가 렌더링될 때마다 serialization이 필요하다. ⇒ 일반 CSS로 변환하는 과정
+        - 변환된 CSS를 tagging 하기 위한 hash 연산작용도 있다.
+        - 더 좋은 패턴은 style 들을 component 바깥에 선언해서 한 번만 로드되게 하는 것.
+            - 그러나 이 방식은 또 props를 스타일에 적용할 수 없다는 문제를 갖고 있다.
+    - 멤버 브라우저 화면 벤치마킹 ⇒ 글쓴이가 직접한 실험
+        - 60fps 를 맞추기 위해 16.67ms 가 필요한 반면 멤버화면 렌더링 시간은 평균 54.3ms
+            - 실험이 M1 맥에서 발생한 것을 고려하면 상당히 느린 편
+    - FlameGraph 분석
+        - Plain CSS 렌더링 타임은 48% 정도 감소한 효과 ⇒ 런타임 성능 비용이 과하게 높다
+- 새로운 스타일링 시스템
+    - CSS Module을 사용하는 방식을 도입하고자 한다.
+        - 앞서 언급된 장점 1, 2를 똑같이 반영할 수 있다.
+        - component props를 그대로 사용할 수 없다는데 아쉬움이 있으나, Sass 라이브러리를 통해 해결 가능
+            - export block 을 통해 Sass 내 상수를 JS에 적용하면서 해결할 수는 있다.
+        - 컴파일 타임에 반영되기에 런타임 cost 없다는게 장점
+        - 기존 Plain CSS의 불편한 DX 도 Utility Class를 통해 해결할 수 있다.
+            - BootStrap 이나 Tailwind 에서도 utility class 를 제공하고 있다.
+                - 여러 class styles 을 병합해서 하나의 스타일로 사용
+- 컴파일 타임 CSS in JS
+    - 큰 성능저하 없이 CSS in JS와 유사한 이점 제공
+    - Compile 시 단점은
+        - 처음 Mount 될 때 스타일이 계속 삽입되어 브라우저가 모든 node 에 대해 스타일을 다시 계산해야 함
+        - 동적 스타일은 빌드 시 추출하지 못하기 때문에, 인라인 스타일을 사용해 CSS 변수로 추가해야 함
+        - React DevTools 를 또한 복잡하게 한다.
