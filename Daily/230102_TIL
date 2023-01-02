@@ -1,0 +1,98 @@
+### 230102 TIL
+오늘의 아티클: [프론트엔트 엔지니어 전문성 트랙](https://news.hada.io/topic?id=8136&utm_source=slack&utm_medium=bot&utm_campaign=T010BFU2CNL)
+
+- 탁월한 엔지니어는 좋은 코드를 짜고, 작업의 현재 가치를 극대화하고, 데이터에 기반하여 의사결정하고, 동료의 효과적 의사결정을 돕고, 꾸준히 학습하는 사람이다. 이 다섯 가지 역량을 발전시키고자 노력하면 좋은 엔지니어가 될 것이다.
+- 커뮤니케이션과 글쓰기 능력이 훨씬 더 중요
+- 개발 스택 ⇒ 주요 특징
+    - 인터넷, 웹브라우저, HTML/CSS/JS에 대한 깊이 이해하고 활용함
+    - 웹 생태계를 구성하는 도구별 장단점을 알고, 여러 환경에서 트러블슈팅해본 경험이 있음
+    - 웹에 등장하는 새로운 기술에 민감하고, 직접 활용 시도를 함
+        - FE는 결국… 급변하는 시대에 가장 민감하고, 툴을 빨리 적용해야 하는 영역
+- 장단점
+    - 어느 정도 수준까지는 혼자서도 역량을 올리기 쉬움 ⇒ 진입장벽이 낮다..?
+    - 제품의 복잡도/성숙도가 충분히 높지 않은 조직에서는 전문성을 발휘하여 인정받을 만한 기회가 적음
+        - 초기 스타트업에서는 전문성이 딱히 필요 없는 인력이라는 뜻으로도 해석 된다..?
+- 역량 향상 방법
+    - [로드맵](https://roadmap.sh/frontend)의 키워드를 따라 책과 인터넷 컨텐츠로 공부하며 사이드 프로젝트에 써보기
+        - 우연히 이 링크의 로드맵이? 내가 이전에 본 아래 글과 유사하다.
+
+      [2022년 프론트엔드 개발 로드맵으로 보는 개발 트랜드와 공부 우선순위 추천](https://ordinary-code.tistory.com/131)
+
+    - 뉴스레터 구독, 오픈소스 참여, 신기술 테스트, 사용하는 도구의 동작 원리와 한계를 이해하고, 때론 직접 도구를 발명하기
+        - 뉴스레터 구독… 정도는 하고 있으니.. 이걸 자주 읽고 배워보자.
+    - 다양한 환경에서 트러블슈팅하고 성능을 끌어올려보기
+- 이후 시니어로서 가능한 커리어
+    - 웹 역량을 높이는 강의 교육자
+    - (웹 생태계를 구성하는 도구를 만드는 조직의) 소프트웨어 엔지니어
+    - (복잡도 높은 제품을 다루는 조직의) 소프트웨어 엔지니어
+    - 프론트엔드 테크 리드
+    - 흠.. 커리어가 결국은 개발자로서의 내가 가진 스킬이 주가 되는 커리어다.
+      - 결국 개발자의 역할은 엔지니어... 인걸로.
+- 제품 특화 트랙 (Product Engineer)
+  - 주요 특징
+      - 적은 양의 코딩으로도 여러 도구를 조합하여 초기 제품 성과를 만들어낼 수 있음
+      - **시장과 고객에 대한 이해가 높고, 이해를 더 높이기 위한 여러 방법을 실무에 적용할 줄 앎**
+      - 마케팅 및 영업 담당자에게 제품을 이해시키기 위한 **커뮤니케이션을 자주 함**
+      - 프로덕트 센스
+        [How to develop product sense](https://www.lennysnewsletter.com/p/product-sense)
+        - 프로덕트 센스란? => 프로덕트의 변화를 통해 유저에게 의미있는 영향을 줄 수 있는 능력
+          - 유저에 대한 **공감**
+          - 문제를 해결하기 위한 **상상력**
+          
+        - 기르기 위한 방법은?
+          - 공감 확대
+            - 프로덕트를 대면하고 있는 사람들의 관찰
+            - 일상 생활에서 경험하는 프로덕트들에 대한 분석
+            - 결국은 어떤 고민들을 하는가?, 어떻게 해결했는가? 에 대한 대답
+          - 상상력
+            - 내 분야 내 새로운 기술들에 대한 호기심
+            - 다른 프로덕트 기획자들로부터의 영감
+
+  - 장단점
+      - 제품을 시장에서 검증받고자 하는 초기 스타트업에게 열렬히 환영받음
+      - 안전한 공간에만 머물러있는다면 본인이 키운 제품 조직에서 밀려나버릴 수도 있음
+  - 역량 향상 방법
+      - 본인 도메인에서 훌륭한 제품을 분석적으로 사용하고, 고객을 관찰하며 [프로덕 센스](https://www.lennysnewsletter.com/p/product-sense) 키우기
+      - 익숙한 도구의 조합에 집착하지 말고 공구상자를 지속적으로 개편하기
+      - 본인이 주도한 초기 제품이 성과를 거둬 구조와 코드를 갈아엎어야 할 시기를 함께 버티며 바퀴를 교체하기
+  - 이후 시니어로서 가능한 커리어
+      - (PMF를 찾는 모든 조직의) 소프트웨어 엔지니어
+      - 그로스 엔지니어, 그로스 컨설턴트
+      - 프론트엔드 테크 리드, 테크니컬 프로그램 매니저
+      - PM, PO, CPO
+  - 내가 원하는 방향은 오히려 이쪽인 것 같다.
+    - 생각하고 발전시키는 것. 그게 나의 기여 아닐까?
+- Fetch API, Ajax 관련된 아티클 읽기
+  - fetch API 란? [관련 링크](https://developer.mozilla.org/ko/docs/Web/API/Fetch_API/Using_Fetch)
+    - 가장 기본 구조는 request, response 형태로 구성
+      - ```fetch('http://example.com/movies.json')
+        .then((response) => response.json())
+        .then((data) => console.log(data));
+        ```
+    - POST, GET 등의 메소드 등을 구현해서 사용할 수 있다.
+      - ```
+        // POST 메서드 구현 예제
+        async function postData(url = '', data = {}) {
+        // 옵션 기본 값은 *로 강조
+        const response = await fetch(url, {
+        method: 'POST', // *GET, POST, PUT, DELETE 등
+        mode: 'cors', // no-cors, *cors, same-origin
+        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: 'same-origin', // include, *same-origin, omit
+        headers: {
+        'Content-Type': 'application/json',
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        redirect: 'follow', // manual, *follow, error
+        referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+        body: JSON.stringify(data), // body의 데이터 유형은 반드시 "Content-Type" 헤더와 일치해야 함
+        });
+        return response.json(); // JSON 응답을 네이티브 JavaScript 객체로 파싱
+        } 
+        postData('https://example.com/answer', { answer: 42 }).then((data) => { console.log(data); // JSON 데이터가 `data.json()` 호출에 의해 파싱됨});
+        ```
+      - 업로드는 POST 를 기반으로, body에 해당 data 를 넣어서 처리
+    - 응답 호출 성공 여부는 then, catch 로 대응
+    - 헤더 객체
+      - 각 key-value 를 연결하는 map 으로 2차원 배열 혹은 객체의 형태를 띈다.
+      - 헤더 객체의 유효성을 판단해 응답 결과를 받을지 말지를 결정할 수도 있다.
