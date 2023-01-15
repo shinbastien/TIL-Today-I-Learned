@@ -1,0 +1,25 @@
+## 230115_TIL
+
+### Regex 이용해서 String 정리하기
+* string.replace는 regex를 이용해서, 조건을 충족시키는 문자를 찾고, 바꿀 수 있다.
+```
+    const regex = /[^a-zA-Z\d]/ig
+    var str = s.replace(regex, "").toLowerCase();
+```
+* 위 코드에서 regex 는 숫자(\d) , 알파벳(a-z, A-Z) 을 제외한(^) 모든 그룹(ig, i는 대소문자 구분 없이라는 조건)을 찾아내라는 뜻이다.
+  * 즉, 숫자와 알파벳이 아닌 모든 것을 찾아내는 조건문
+
+### Array.prototype.every(), Array.prototype.forEach()
+* every는 모든 원소에 대해 조건문을 실행하고, 모두의 결과를 &&로 연산한 결과값 반환
+* forEach는 다른 return 값 없이 안에 들어간 함수를 모든 원소에 대해 실행
+```
+// every
+let numbers = [1, 2, 3, 4, 5];
+let isAllEven = numbers.every(n => n % 2 === 0);
+console.log(isAllEven); // false
+
+// forEach
+let numbers = [1, 2, 3, 4, 5];
+numbers.forEach(n => console.log(n * 2));
+// prints 2 4 6 8 10
+```
