@@ -2,7 +2,6 @@
 
 * 참고문헌
   * [blocking I/O, non-blocking I/O에 대하여, 티스토리 블로그](https://etloveguitar.tistory.com/140)
-  * ㄹㅇㄹ
 
 ### 먼저, I/O 란?
 * input 과 output을 일컫는 말
